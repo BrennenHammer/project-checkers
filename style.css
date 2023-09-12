@@ -27,8 +27,8 @@ body {
         display: grid;
         grid-template-columns: repeat(8, 1fr);
         border-radius: 15px;
-        margin-left: 867px;
-        margin-top: 100px;
+        margin-left: auto;
+        margin-top: auto;
         position: fixed;
   }
   
@@ -49,7 +49,7 @@ body {
     border-radius: 50%;
     width: 70%; 
     height: 60%;
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -152,8 +152,9 @@ body {
     }
   
     .modal-content {
-      position: fixed;
-      z-index: 2;
+      position: relative;
+      background-color: black;
+      z-index: 0;
       left: 50%;
       top: 50%;
       transform: translate(-50%,-50%);

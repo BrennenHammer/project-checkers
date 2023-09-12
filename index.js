@@ -3,6 +3,7 @@ const startScreen = document.getElementById('startScreen');
 
 startButton.addEventListener('click', function(){
     startScreen.style.display = 'none';
+    startScreen.style.width = '0px';
 });
 function movePiece(e) {
   let piece = e.target;
@@ -26,17 +27,7 @@ function movePiece(e) {
   }
 }
 
-function enableToCapture(p) {
-  let find = false;
-  let pos = null;
-  capturedPosition.forEach((element) => {
-    if (element.newPosition.compare(p)) {
-      find = true;
-      pos = element.newPosition;
-      old = element.pieceCaptured;
-      return;
-    }
-  });
+
 
   if (find) {
     board[pos.row][pos.column] = currentPlayer;
@@ -51,7 +42,7 @@ function enableToCapture(p) {
   } else {
     builBoard();
   }
-}
+
 
 function enableToMove(p) {
   let find = false;
