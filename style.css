@@ -1,0 +1,237 @@
+#startScreen{
+    background-color: rgb(118, 44, 44);
+    height: 471px;
+    width: 521px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    border-radius: 4%;
+}
+#startButton{
+    height: 50px;
+    width: 200px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+  }
+  
+.container {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        border-radius: 15px;
+        margin-left: 867px;
+        margin-top: 100px;
+        position: fixed;
+  }
+  
+  
+  .next-player {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 20px;
+  }
+  .occupied {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+ 
+  .blue-Piece, .black-Piece {
+    border-radius: 50%;
+    width: 70%; 
+    height: 60%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+  .game {
+    background-color: #88a5b8;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4%;
+    border: 4px solid purple
+  }
+  
+  .game .row {
+    width: 100%;
+    height: 10%;
+    display: flex;
+  }
+  
+  .game .row .column {
+    width: 10%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .game .row .column .occupied {
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+  }
+  
+  .game .row .column .occupied.blackPiece {
+    background-color: black;
+    box-shadow: 4px 4px 7px rgb(73, 173, 50);
+    border: 4px solid purple;
+  }
+  
+  .game .row .column .occupied.bluePiece {
+    box-shadow: 4px 4px 7px rgb(209, 153, 22);
+    border: 4px solid rgb(159, 156, 181);
+    background-color: rgb(58, 74, 166);
+  }
+  
+  .game .row .column.whiteCase {
+    background-color: #272a80;
+  }
+  
+  .game .row .column.blackCase {
+    background: conic-gradient(blue, green, purple, white, rgb(198, 20, 20));
+  }
+  
+  .readyToMove {
+    background-color: rgb(0, 128, 111);
+  }
+  
+  /* modal style */
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  
+  button{
+      cursor: pointer;
+      outline: none;
+      border: none;
+  }
+  
+  body {
+      font-family: sans-serif;
+      position: relative;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #fff;
+      width: 100vw;
+      height: 100vh;
+    }
+  
+    .modal {
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+  
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.15s ease-out;
+    }
+    
+    .effect{
+      visibility: visible;
+      opacity: 1;
+    }
+  
+    .modal-content {
+      position: fixed;
+      z-index: 2;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      background-color: #dfc7ae;
+      border-radius: 20px;
+    }
+    
+    .modal-body {
+      padding: 5em;
+      color: black;
+    }
+  
+    .modal-body p{
+      text-align: center;
+      font-size: 16px;
+      letter-spacing: 0.1em;
+      color: black;
+    }
+  
+  .modalClose {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: none;
+      position: fixed;
+      width: 40px;
+      height: 40px;
+    }
+    .modalClose:before, .modalClose:after {
+      content: "";
+      position: absolute;
+      top: 18px;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: #ecc59a;
+      border-radius: 4px;
+    }
+    .modalClose:before {
+      transform: rotate(45deg);
+    }
+    .modalClose:after {
+      transform: rotate(-45deg);
+    }
+  
+    .modal .btn-container{
+      margin-top: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+  
+    .modal .btn{
+      background-color: #4c382e;
+      color: white;
+      padding: 10px 40px;
+      border: 1px solid #4c382e;
+      border-radius: 5px;
+    }
+
+
+    .background-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);  /* Adjust based on how many images per row you want */
+        grid-template-rows: repeat(2, 1fr);     /* Adjust based on how many rows of images you want */
+        height: 100%;
+        width: 100%;
+        position: fixed;   /* Fixed position ensures the grid stays behind content */
+        z-index: -10; 
+        top: 0;
+        left: 0;      /* Ensure grid is behind other content */
+    }
+    
+    .background-grid img {
+        width: 100%; 
+        height: 60vh;
+        display: block;
+    }
+
+
