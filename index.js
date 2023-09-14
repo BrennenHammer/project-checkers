@@ -3,8 +3,13 @@ const startScreen = document.getElementById('startScreen');
 const backgroundMusic = document.getElementById('backgroundMusic');
 const backgroundMusic2 = document.getElementById('backgroundMusic2');
 const backgroundMusic3 = document.getElementById('backgroundMusic3');
+const countryfiddlesound = document.getElementById("countryfiddlesound")
 const musicBack = document.getElementById('musicBack');
 const winSound = document.getElementById("winSound");
+const movesound = document.getElementById("moveSound");
+const img1 = document.getElementById('img1');
+const img2 = document.getElementById('img2');
+const darkModeToggle = document.getElementById("darkModeToggle");
 
 startButton.addEventListener('click', function() {
   startScreen.style.display = 'none';
@@ -26,14 +31,19 @@ startButton.addEventListener('click', function() {
       backgroundMusic.pause();
       backgroundMusic2.currentTime = 0; // Start from the beginning
       backgroundMusic2.play();
-  }, 25000); // 30 seconds
+  }, 20000); // 30 seconds
 
   // After 50 seconds, pause backgroundMusic2 and start backgroundMusic3
   setTimeout(function() {
       backgroundMusic2.pause();
       backgroundMusic3.currentTime = 0; // Start from the beginning
       backgroundMusic3.play();
-  }, 40000); // 50 seconds
+  }, 35000);
+  setTimeout(function() {
+    backgroundMusic3.pause();
+    countryfiddlesound.currentTime = 0;
+    countryfiddlesound.play();
+}, 50000);
 
 });
 
@@ -57,6 +67,7 @@ function movePiece(e) {
       findPossibleNewPosition(p, player);
     }
   }
+ 
 }
 
 function enableToCapture(p) {
@@ -111,6 +122,9 @@ function moveThePiece(newPosition) {
   currentPlayer = reverse(currentPlayer);
   displayCurrentPlayer();
   builBoard();
+  movesound.currentTime = 0;
+  movesound.play()
+  movesound.play()
 }
  
 function findPossibleNewPosition(piece, player) {
@@ -260,16 +274,43 @@ function displayCounter(black, blue) {
   blackContainer.innerHTML = black;
   blueContainer.innerHTML = blue;
 }
+function moveImage(img) {
+  let dx = (Math.random() - 0.5) * 10;  // change in x direction
+  let dy = (Math.random() - 0.5) * 10;  // change in y direction
+  
+  function animate() {
+      let rect = img.getBoundingClientRect();
+
+      // Check collision with vertical container walls
+      if (rect.left < winDiv.offsetLeft || rect.right > winDiv.offsetWidth) {
+          dx = -dx;
+      }
+      // Check collision with horizontal container walls
+      if (rect.top < winDiv.offsetTop || rect.bottom > winDiv.offsetHeight) {
+          dy = -dy;
+      }
+
+      img.style.left = (img.offsetLeft + dx) + "px";
+      img.style.top = (img.offsetTop + dy) + "px";
+
+      requestAnimationFrame(animate);
+  }
+
+  animate();
+}
 
 function modalOpen(black) {
   document.getElementById("winner").innerHTML = black === 0 ? "blue" : "Black";
   document.getElementById("loser").innerHTML = black !== 0 ? "blue" : "Black";
   modal.classList.add("effect");
-  backgroundMusic3.pause()
+  //moveImage(img1)
+  //moveImage(img2)
   setTimeout (function(){
+    countryfiddlesound.pause()
+    winSound.currentTime = 0
     winSound.play()
   },1000)
-}
+};
 
 
 
@@ -281,3 +322,37 @@ function modalClose() {
 function reverse(player) {
   return player === -1 ? 1 : -1;
 }
+function playGame(playerChoice) {
+  const choices = ['rock', 'paper', 'scissors'];
+  const computerChoice = choices[Math.floor(Math.random() * 3)];
+
+  let result;
+
+  if (playerChoice === computerChoice) {
+      result = "It's a draw!";
+  } else {
+      switch (playerChoice) {
+          case 'rock':
+              result = (computerChoice === 'scissors') ? 'Computer wins!' : 'You lose!';
+              break;
+          case 'paper':
+              result = (computerChoice === 'rock') ? 'Computer wins!' : 'You lose!';
+              break;
+          case 'scissors':
+              result = (computerChoice === 'paper') ? 'Computer wins!' : 'You lose!';
+              break;
+      }
+  }
+
+  // Display the result
+  document.getElementById('result').textContent = result;
+
+  // If computer wins the RPS, then the player who didn't click wins overall
+  if (result === 'Computer wins!') {
+      alert('The player who did NOT click wins the overall game!');
+
+  }
+}
+
+
+

@@ -9,6 +9,15 @@
 </head>
 
 <body>
+  <div id="rps-panel">
+
+    <button onclick="playGame('rock')">Rock</button>
+    <button onclick="playGame('paper')">Paper</button>
+    <button onclick="playGame('scissors')">Scissors</button>
+    <p id="result"></p>
+   
+    
+</div>
 
   <audio id="backgroundMusic">
     <source src="newgamesoundcheckers.mp3" type="audio/mpeg">
@@ -18,14 +27,19 @@
   <source src="newgamesound2checkers.mp3" type="audio/mpeg">
 </audio>
 
-<audio id="backgroundMusic3" loop>
+<audio id="backgroundMusic3">
   <source src="newgamesound3checkers.mp3" type="audio/mpeg">
 </audio>
 
-
+<audio id="countryfiddlesound">
+  <source src="countryfiddlesound.mp3" type="audio/mpeg">
+</audio>
 
 <audio id="musicBack">
   <source src="beginning guitar.mp3" type ='audio/mpeg'>
+</audio>
+<audio id="moveSound">
+  <source  src="movepiecesoundcheckers.mp3" type="audio/mpeg">
 </audio>
 <audio id="winSound">
   <source  src="soundforwinningcheckers.mp3" type="audio/mpeg">
@@ -59,15 +73,19 @@
               <div class="modal-body">
                   <p>The <strong id="winner"></strong> player won the game !!</p>
                   <p> <span id="loser"></span>, would you take your revenge ???</p>
-                 <img class="imginwindiv" src ='KingCage.webp'>
+                  <img class="img1" src="funnycatphoto.jpg" alt="" srcset="">
+                  <img class="img2" src="funnycatphoto.jpg" alt="" srcset="">
+                  <img class="imginwindiv" src ='KingCage.webp'>
                   <div class="btn-container">
                     <button class="btn" onclick="location.reload()">Yes </button>
-                    <button class="btn" onclick="modalClose()">No</button>
+                    <button class="btn2" onclick="modalClose()">No</button>
                   </div>
               </div>
           </div>
         </div>
 
+        
+        
       <div class="background-grid">
           <img src="forCheckers.webp" alt="Image 1">
           <img src="forCheckers.png" alt="Image 2">

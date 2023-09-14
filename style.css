@@ -18,6 +18,15 @@
     font-weight: bold;
     cursor: pointer;
 }
+#rps-panel{
+  position: fixed;
+  width: 130px;
+  height: 100%;
+  background-color: #cdb4b4;
+  padding: 20px;
+  box-shadow: -2px 0px 5px rgba(0,0,0,0.3);
+}
+
   
 .container {
         display: grid;
@@ -167,13 +176,14 @@
     }
   
     .modal-content {
+      margin-top: 50px;
       position: relative;
       background-color: black;
       z-index: 0;
       left: 50%;
       top: 50%;
       transform: translate(-50%,-50%);
-      background: conic-gradient(rgb(121, 62, 121), rgb(96, 153, 182), white, blue);
+      background: conic-gradient(black, black, rgb(121, 62, 121), white, blue);
       border-radius: 20px;
     }
     
@@ -187,8 +197,8 @@
       font-size: 20px;
       letter-spacing: 0.1em;
       font-weight: bolder;
-      font-family: cursive;
-      color: black;
+      font-family: sans-serif;
+      color: rgb(3, 206, 237);
     }
   
   .modalClose {
@@ -222,15 +232,30 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 20px;
+      gap: 15px;
     }
   
     .modal .btn{
-      background-color: #2d2bbf;
+      background-color: #0f72ce;
       color: rgb(59, 125, 191);
       padding: 15px 40px;
+      font-weight: 800;
+      font-size: 20px;
+      color: white;
       margin-bottom: 150px;
-      border: 3px solid #a01c1c;
+      border: 10px dotted #25d1e1;
+      border-radius: 10px;
+      font-size: 20px;
+    }
+    .modal .btn2{
+      background-color: #020203;
+      color: rgb(4, 8, 12);
+      padding: 15px 40px;
+      font-weight: 800;
+      font-size: 20px;
+      color: white;
+      margin-bottom: 150px;
+      border: 10px dotted #25d1e1;
       border-radius: 10px;
       font-size: 20px;
     }
@@ -261,5 +286,64 @@
   height: 200px;
   margin-left: 425px;
   margin-top: 30px;
+  color: white;
+  border-radius: 20%;
   border: 3px solid purple;
 }
+.img1{
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  margin-top: 100px;
+  color: white;
+  border-radius: 20%;
+  border: 3px solid purple;
+}
+.img2{
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  margin-top: 100px;
+  margin-left: 900px;
+  color: white;
+  border-radius: 20%;
+  border: 3px solid purple;
+}
+.img1{
+  animation: spinReverse 1s linear infinite;
+}
+
+@keyframes spinReverse {
+  100% {
+      transform: rotate(-360deg);
+  }
+}
+
+.img2{
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
