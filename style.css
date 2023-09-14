@@ -4,6 +4,8 @@
     width: 521px;
     position: absolute;
     display: flex;
+    margin-left: 425px;
+    margin-top: 50px;
     justify-content: center;
     align-items: center;
     z-index: 10;
@@ -21,8 +23,8 @@
         display: grid;
         grid-template-columns: repeat(8, 1fr);
         border-radius: 15px;
-        margin-left: 350px;
-        margin-top: auto;
+        margin-left: 355px;
+        margin-top: 50px;
         position: fixed;
   }
   .counter {
@@ -171,7 +173,7 @@
       left: 50%;
       top: 50%;
       transform: translate(-50%,-50%);
-      background-color: #dfc7ae;
+      background: conic-gradient(rgb(121, 62, 121), rgb(96, 153, 182), white, blue);
       border-radius: 20px;
     }
     
@@ -203,7 +205,7 @@
       left: 0;
       right: 0;
       height: 4px;
-      background: #ecc59a;
+      background: #2c4fa9;
       border-radius: 4px;
     }
     .modalClose:before {
@@ -222,10 +224,10 @@
     }
   
     .modal .btn{
-      background-color: #4c382e;
-      color: white;
+      background-color: #2d2bbf;
+      color: rgb(59, 125, 191);
       padding: 10px 40px;
-      border: 1px solid #4c382e;
+      border: 3px solid #a01c1c;
       border-radius: 5px;
     }
 
@@ -248,4 +250,11 @@
         display: block;
     }
 
-
+.imginwindiv{
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  margin-left: 365px;
+  border: 3px solid purple;
+}

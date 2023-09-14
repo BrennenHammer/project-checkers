@@ -9,6 +9,19 @@
 </head>
 
 <body>
+
+  <audio id="backgroundMusic" loop>
+    <source src="gamesoundcheckers.mp3" type="audio/mpeg">
+    
+</audio>
+
+<audio id="musicBack">
+  <source src="beginning guitar.mp3" type ='audio/mpeg'>
+</audio>
+<audio id="winSound">
+  <source  src="soundforwinningcheckers.mp3" type="audio/mpeg">
+</audio>
+
     <div id="startScreen">
 
         <button id="startButton">Hello, Start the game!</button>
@@ -36,8 +49,8 @@
           <div class="modal-content">
               <div class="modal-body">
                   <p>The <strong id="winner"></strong> player won the game !!</p>
-                  <p> <span id="loser"></span>, whould you take your revenge ???</p>
-    
+                  <p> <span id="loser"></span>, would you take your revenge ???</p>
+                 <img class="imginwindiv" src ='KingCage.webp'>
                   <div class="btn-container">
                     <button class="btn" onclick="location.reload()">Yes </button>
                     <button class="btn" onclick="modalClose()">No</button>
@@ -54,7 +67,7 @@
           <img src="Black Minimalist Stickers Checkered Canvas Print.png" alt="Image 5">
           <img src="Pink Playful Fun Psychedelic Phone Wallpaper.png" alt="Image 6">
       </div>
-
+     
 
     <script src="index.js"></script>
     <script src="script.js"></script>

@@ -1,11 +1,24 @@
 const startButton = document.getElementById('startButton');
 const startScreen = document.getElementById('startScreen');
+const backgroundMusic = document.getElementById('backgroundMusic');
+const musicBack = document.getElementById('musicBack');
+const winSound = document.getElementById("winSound")
 
-startButton.addEventListener('click', function(){
+startButton.addEventListener('click', function() {
     startScreen.style.display = 'none';
     startScreen.style.width = '0px';
-});
+    
+    // Play the first 5 seconds of musicBack
+    musicBack.currentTime = 0;
+    musicBack.play();
 
+    // Set a timeout for 5 seconds to pause musicBack and start backgroundMusic
+    setTimeout(function() {
+        musicBack.pause();
+        backgroundMusic.currentTime = 0; // Ensure we start from the beginning
+        backgroundMusic.play();
+    }, 6000); // 5 seconds
+});
 
 function movePiece(e) {
   let piece = e.target;
@@ -235,7 +248,14 @@ function modalOpen(black) {
   document.getElementById("winner").innerHTML = black === 0 ? "blue" : "Black";
   document.getElementById("loser").innerHTML = black !== 0 ? "blue" : "Black";
   modal.classList.add("effect");
+  backgroundMusic.pause()
+  setTimeout (function(){
+    winSound.play()
+  },1000)
 }
+
+
+
 
 function modalClose() {
   modal.classList.remove("effect");
