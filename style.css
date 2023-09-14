@@ -1,6 +1,6 @@
 #startScreen{
     background-color: rgb(118, 44, 44);
-    height: 471px;
+    height: 460px;
     width: 521px;
     position: absolute;
     display: flex;
@@ -184,8 +184,10 @@
   
     .modal-body p{
       text-align: center;
-      font-size: 16px;
+      font-size: 20px;
       letter-spacing: 0.1em;
+      font-weight: bolder;
+      font-family: cursive;
       color: black;
     }
   
@@ -226,9 +228,11 @@
     .modal .btn{
       background-color: #2d2bbf;
       color: rgb(59, 125, 191);
-      padding: 10px 40px;
+      padding: 15px 40px;
+      margin-bottom: 150px;
       border: 3px solid #a01c1c;
-      border-radius: 5px;
+      border-radius: 10px;
+      font-size: 20px;
     }
 
 
@@ -255,6 +259,7 @@
   justify-content: center;
   align-items: center;
   height: 200px;
-  margin-left: 365px;
+  margin-left: 425px;
+  margin-top: 30px;
   border: 3px solid purple;
 }

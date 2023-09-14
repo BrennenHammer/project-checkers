@@ -1,23 +1,40 @@
 const startButton = document.getElementById('startButton');
 const startScreen = document.getElementById('startScreen');
 const backgroundMusic = document.getElementById('backgroundMusic');
+const backgroundMusic2 = document.getElementById('backgroundMusic2');
+const backgroundMusic3 = document.getElementById('backgroundMusic3');
 const musicBack = document.getElementById('musicBack');
-const winSound = document.getElementById("winSound")
+const winSound = document.getElementById("winSound");
 
 startButton.addEventListener('click', function() {
-    startScreen.style.display = 'none';
-    startScreen.style.width = '0px';
-    
-    // Play the first 5 seconds of musicBack
-    musicBack.currentTime = 0;
-    musicBack.play();
+  startScreen.style.display = 'none';
+  startScreen.style.width = '0px';
 
-    // Set a timeout for 5 seconds to pause musicBack and start backgroundMusic
-    setTimeout(function() {
-        musicBack.pause();
-        backgroundMusic.currentTime = 0; // Ensure we start from the beginning
-        backgroundMusic.play();
-    }, 6000); // 5 seconds
+  // Play the first 5 seconds of musicBack
+  musicBack.currentTime = 0;
+  musicBack.play();
+
+  // After 5 seconds, pause musicBack and start backgroundMusic
+  setTimeout(function() {
+      musicBack.pause();
+      backgroundMusic.currentTime = 0; // Start from the beginning
+      backgroundMusic.play();
+  }, 3000); // 5 seconds
+
+  // After 30 seconds, pause backgroundMusic and start backgroundMusic2
+  setTimeout(function() {
+      backgroundMusic.pause();
+      backgroundMusic2.currentTime = 0; // Start from the beginning
+      backgroundMusic2.play();
+  }, 25000); // 30 seconds
+
+  // After 50 seconds, pause backgroundMusic2 and start backgroundMusic3
+  setTimeout(function() {
+      backgroundMusic2.pause();
+      backgroundMusic3.currentTime = 0; // Start from the beginning
+      backgroundMusic3.play();
+  }, 40000); // 50 seconds
+
 });
 
 function movePiece(e) {
@@ -248,7 +265,7 @@ function modalOpen(black) {
   document.getElementById("winner").innerHTML = black === 0 ? "blue" : "Black";
   document.getElementById("loser").innerHTML = black !== 0 ? "blue" : "Black";
   modal.classList.add("effect");
-  backgroundMusic.pause()
+  backgroundMusic3.pause()
   setTimeout (function(){
     winSound.play()
   },1000)
