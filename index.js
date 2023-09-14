@@ -333,13 +333,13 @@ function playGame(playerChoice) {
   } else {
       switch (playerChoice) {
           case 'rock':
-              result = (computerChoice === 'scissors') ? 'Computer wins!' : 'You lose!';
+              result = (computerChoice === 'scissors') ? 'Computer wins!' : 'You win!';
               break;
           case 'paper':
-              result = (computerChoice === 'rock') ? 'Computer wins!' : 'You lose!';
+              result = (computerChoice === 'rock') ? 'Computer wins!' : 'You win!';
               break;
           case 'scissors':
-              result = (computerChoice === 'paper') ? 'Computer wins!' : 'You lose!';
+              result = (computerChoice === 'paper') ? 'Computer wins!' : 'You win!';
               break;
       }
   }
@@ -348,8 +348,8 @@ function playGame(playerChoice) {
   document.getElementById('result').textContent = result;
 
   // If computer wins the RPS, then the player who didn't click wins overall
-  if (result === 'Computer wins!') {
-      alert('The player who did NOT click wins the overall game!');
+  if (result === 'You win!') {
+      alert('The player who clicked the button wins the game!');
 
   }
 }
